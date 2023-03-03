@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/stylew.css">
+</head>
+<body>
+  
+      <div class="loginbox">
+        <img src="../static/imagenes/avatar.jpg" alt="" class="avatar">
+        <h1>Login</h1>
+        <form action="{{url_for('login')}}" method="POST">
+          <p>Correo</p>
+          <input type="text" placeholder="correo" name="correo">
+          <p>Contraseña</p>
+          <input type="password" placeholder="contraseña" name="password">
+          <div class="hero container">
+            <div>
+              <input type="submit" value="iniciar">
+            </div>
+          <a href="#">Olvidaste tu Contraseña</a><br>
+          <a href="{{url_for('registro')}}">¿No tienes una Cuenta?</a>
+        </form>
+        {% if aviso %}
+        <p>{{ aviso }}</p>
+        {% endif %}
+      </div>
+
+</body>
+</html>
